@@ -25,8 +25,7 @@ public class Ex8_Munje {
 		Scanner sc = new Scanner(System.in);
 		
 		String sang = "";
-		int su, dan, total = 0;
-		double dctotal;
+		int su, dan, total, dctotal = 0;
 		
 		System.out.println("상품명");
 		sang = sc.nextLine();
@@ -41,7 +40,7 @@ public class Ex8_Munje {
 		System.out.printf("%s %d개의 총 금액 : %d \n", sang, su, total);
 		
 		if(su >= 5) {
-			dctotal = total * 0.9;
+			dctotal = total * 9/10;
 			System.out.println("10프로 할인입니다.");
 			System.out.println("10프로 할인된 금액 : " + (int)dctotal);
 		}
