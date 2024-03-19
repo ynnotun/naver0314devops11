@@ -15,7 +15,7 @@ public class Ex7_While {
 		
 		int score, sum = 0, count = 0; 
 
-		System.out.println("점수는?");
+		System.out.println("점수는? (종료 : 0)");
 		
 		while(true) {
 			score = sc.nextInt();
