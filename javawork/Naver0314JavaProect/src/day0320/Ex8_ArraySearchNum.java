@@ -30,8 +30,10 @@ public class Ex8_ArraySearchNum {
 			if(searchIndex == -1) {
 				System.out.println("\t"+num+"은 데이터에 없습니다");
 			}else {
-				System.out.println("");
+				System.out.println("\t"+num+"은 "+(searchIndex+1)+"번째에 있습니다");
 			}
+			
+			System.out.println();
 		}
 	}
 }
