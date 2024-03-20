@@ -4,56 +4,31 @@ import java.util.Iterator;
 
 public class Ex7_Array {
 	public static void main(String[] args) {
-		
-		// 배열을 선언하면서 초기값을 지정하는 경우
-		
-		int []arr1= {4,6,8,10,30};
-		
-		System.out.println("** 출력 #1 **");
-		for(int i = 0; i<arr1.length; i++) {
-			System.out.printf("%4d",arr1[i]);
-		}
-		
-		System.out.println();
-		System.out.println("** 출력 #2 **");
-		for(int n:arr1) {
-			System.out.printf("%4d",n);
-		}
-		
-		System.out.println();
-		System.out.println("** 선언후 한번에 값 할당 **");
-		
-		int []arr2;
-		arr2 = new int[] {10,20,30,40};
-		
-		System.out.println("arr2의 개수 :" + arr2.length);
 
-		for(int n:arr1) {
-			System.out.printf("%4d",n);
-		}
 		
-		System.out.println();
-		System.out.println();		
+		int []data= {7,10,30,-13,67,-123,78,345,3,110};
 		
-		// 문자열 배열
-		String []str1 = {"김영자", "이미자", "강호동", "이재성"};
-		String []str2;
-		str2 = new String[] {"사과", "오렌지", "딸기", "수박", "참외"};
-		
+		int max, min;
+		max = min = data[0]; // 무조건 첫 데이터를 max 또는 min 지정
+		System.out.println(data.length);
 
-		System.out.println("** 출력 #1 **");
-		for(int i = 0; i<str1.length; i++) {
-			System.out.printf("%4s",str1[i]);
+		for(int i = 1; i< data.length;i++) {
+			if(max<data[i]) max=data[i];
+			if(min>data[i]) min=data[i];
 		}
+		System.out.println("최대값 :" + max);
+		System.out.println("최소값 :" + min);
 		
-		System.out.println();
-		System.out.println();
+		int plusCount=0, minusCount=0;
+		// 배열 데이터 중 양수의 개수와 음수의 개수를 구하여 출력해 보세요
 		
-		System.out.println("** 출력 #2 **");
-		for(String n:str2) {
-			System.out.printf("%4s",n);
+		for(int i = 1; i< data.length;i++) {
+			if(0<data[i]) plusCount++;
+			if(0>data[i]) minusCount++;
 		}
-		
+		System.out.println("양수 :" + plusCount);
+		System.out.println("음수 :" + minusCount);
+	
 	
 	}
 }

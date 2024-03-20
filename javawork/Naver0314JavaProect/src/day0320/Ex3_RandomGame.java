@@ -2,10 +2,11 @@ package day0320;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Date;
 
-public class Ex3_MyCalendar {
+public class Ex3_RandomGame {
 	public static void main(String[] args) {
-		
+
 		/*
 		 * 1. 1~100사이의 난수를 발생한 후 숫자 맞히기
 		 * 2. 숫자 입력 시 앞에 횟수 출력
@@ -83,5 +84,8 @@ public class Ex3_MyCalendar {
 		}
 		
 		System.out.println("** 게임을 종료합니다. **");
+				
+				
+	
 	}
 }
