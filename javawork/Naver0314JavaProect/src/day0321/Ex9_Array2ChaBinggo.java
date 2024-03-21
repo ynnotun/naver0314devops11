@@ -3,74 +3,28 @@ package day0321;
 import java.util.Scanner;
 
 public class Ex9_Array2ChaBinggo {
-
 	public static void main(String[] args) {
 		
-		// 2차원 배열 선언 방법
-		int [][]arr = new int[3][3]; // 3행 3열
-		int binggo;
+		// 자바는 각 행의 열 개수를 각각 다르게 줄 수 있다
+		// c언어의 경우 가장 큰 열개수에 맞춰서 초기화된다
 		
-		Scanner sc = new Scanner(System.in);
+		int [][]arr = new int[][] {
+			{3,4,5},
+			{10,20,30,40},
+			{1,5,7,9,11},
+		};
 		
-		/*
-		 * 같은 숫자가 나올 경우 binggo 변수를 1증가하여 빙고 개수를 구하고
-		 * 같은 숫자가 없을 경우 꽝!! 이라고 출력
-		 * */
-		
-		while(true) {
-			binggo = 0;
-			// 2차원 배열에 1~3의 값을 임의로 발생
-			
-			for(int i= 0; i<arr.length; i++) {
-				for(int j= 0; j<arr.length; j++) {
-					arr[i][j] = (int)(Math.random()*3)+1;
-					
-				}
+		System.out.println("행의 개수 :"+ arr.length);
+		System.out.println("0행의 열의 개수 :"+ arr[0].length);
+		System.out.println("1행의 열의 개수 :"+ arr[1].length);
+		System.out.println("2행의 열의 개수 :"+ arr[2].length);
+
+		for(int i = 0; i<arr.length; i++) {
+			for(int j = 0; j<arr[i].length; j++) {
+				System.out.print(arr[i][j]+"\t");
 			}
-			
-			// 출력
-			for(int i= 0; i<arr.length; i++) {
-				for(int j= 0; j<arr.length; j++) {
-					System.out.printf("%4d", arr[i][j]);
-				}
-				System.out.println("\n");
-			}
-			
-			// 빙고 개수나 꽝 출력
-			
-			int []num = new int[3];
-			
-			for(int i= 0; i<arr.length; i++) {
-				if(arr[i][0] == arr[i][1] && arr[i][0] == arr[i][2]) {
-					binggo++;
-				}
-				if(arr[0][i] == arr[1][i] && arr[0][i] == arr[2][i]) {
-					binggo++;
-				}
-			}
-			
-			if(arr[0][0] == arr[1][1] && arr[0][0] == arr[2][2]) {
-				binggo++;
-			}
-			
-			if(arr[0][0] == arr[1][1] && arr[0][0] == arr[2][0]) {
-				binggo++;
-			}
-			
-			if(binggo == 0) System.out.println("꽝");
-			else System.out.println("빙고"+binggo+"개");
-			
-			
-			System.out.println("=".repeat(12));
-			String ans = sc.nextLine();
-			
-			if(ans.equalsIgnoreCase("x")) {
-				System.out.println("** 빙고게임을 종료합니다 **");
-				break;
-			}
-				
+			System.out.println();
 		}
-		
 		
 	}
 
