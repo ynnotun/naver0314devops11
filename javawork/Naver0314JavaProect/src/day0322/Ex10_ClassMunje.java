@@ -62,7 +62,7 @@ public class Ex10_ClassMunje {
 
 	public static void writeMember(Member m)
 	{	
-		System.out.println(m.getName() + m.getHp() + m.getAddr());
+		System.out.println(m.getName()+ m.getHp() + m.getAddr());
 		
 	}
 	public static void main(String[] args) {
