@@ -45,17 +45,7 @@ public class Employee {
 	public void setSudang(int sudang) {
 		this.sudang = sudang;
 	}
-	
-	public void setSawon(String name, String position, int age) {
-		this.name = name;
-		this.position = position;
-		this.age = age;
-	}
-	
-	public void setPay(int gibon, int sudang) {
-		this.gibon = gibon;
-		this.sudang = sudang;
-	}
+
 
 	// getter
 	public String getName() {
@@ -77,6 +67,21 @@ public class Employee {
 	public int getSudang() {
 		return sudang;
 	}
+	
+	// 추가 메서드들
+	
+	
+	public void setPay(int gibon, int sudang) {
+		this.gibon = gibon;
+		this.sudang = sudang;
+	}
+
+	public void setSawon(String name, String position, int age) {
+		this.name = name;
+		this.position = position;
+		this.age = age;
+	}
+	
 
 	public int getNetPay() {
 		return gibon + sudang;
