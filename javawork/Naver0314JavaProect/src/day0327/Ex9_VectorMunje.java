@@ -112,19 +112,36 @@ public class Ex9_VectorMunje {
 	public void addStudent() {
 		System.out.println("이름을 입력하세요");
 		String name = sc.nextLine();
+		int age, java, spring, html;
 
 		System.out.println("나이를 입력하세요");
-		int age = Integer.parseInt(sc.nextLine());
-
+		try {
+			age = Integer.parseInt(sc.nextLine());
+		} catch (NumberFormatException e) {
+			age = 0;
+		}
+		
 		System.out.println("자바 점수를 입력하세요");
-		int java = Integer.parseInt(sc.nextLine());
-
+		try {
+			java = Integer.parseInt(sc.nextLine());
+		} catch (NumberFormatException e) {
+			java = 0;
+		}
+		
 		System.out.println("스프링 점수를 입력하세요");
-		int spring = Integer.parseInt(sc.nextLine());
-
+		try {
+			spring = Integer.parseInt(sc.nextLine());
+		} catch (NumberFormatException e) {
+			spring = 0;
+		}
+		
 		System.out.println("HTML 점수를 입력하세요");
-		int html = Integer.parseInt(sc.nextLine());
-
+		try {
+			html = Integer.parseInt(sc.nextLine());
+		} catch (NumberFormatException e) {
+			html = 0;
+		}
+		
 		StudentDto dto = new StudentDto(name, age, java, spring, html);
 		list.add(dto); // list에 추가
 		System.out.println(list.size()+"번째 멤버 정보를 추가하였습니다!");
@@ -172,22 +189,23 @@ public class Ex9_VectorMunje {
 		
 		System.out.println("이름을 입력하세요");
 		String name = sc.nextLine();
+		boolean f = false;
+		
 		for(int i=0;i<list.size();i++)
 		{
 			StudentDto dto=list.get(i);
-			boolean f = dto.getName().startsWith(name);
-			if(f)
+			if(dto.getName().contains(name))
 			{
+				f = true;
 				System.out.println("이름 : "+dto.getName());
 				System.out.println("나이 : "+dto.getAge());
 				System.out.println("자바 점수 : "+dto.getJava());
 				System.out.println("스프링 점수 : "+dto.getSpring());
 				System.out.println("HTML 점수 : "+dto.getHtml());
-				break;
-			} else {
-				System.out.println(name+"님은 명단에 없습니다");
 			}
 		}
+		
+		if(!f) System.out.println(name+"님은 명단에 없습니다");
 
 	}
 	
@@ -243,5 +261,4 @@ public class Ex9_VectorMunje {
 			System.out.println();
 		}
 	}
-
 }

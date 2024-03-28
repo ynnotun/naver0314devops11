@@ -7,7 +7,7 @@ abstract class Hello
 
 interface Happy{
 	public void insert();
-	public void delete();
+	public void delete();	
 }
 
 class Kiwi
